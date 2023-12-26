@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://me2.do/5BvBFJ57">
+</head>
+<body>
+	<h1>연산자</h1>
+	
+	<div>10 + 3 = 13</div>
+
+	<div><span th:text="${a}"></span> + <span th:text="${b}"></span> = <span th:text="${a + b}"></span></div>
+	
+	<div><span th:text="${a + ' + ' + b + ' = ' + (a + b)}"></span></div>
+	
+	<div><span th:text="${a} + ' + ' + ${b} + ' = ' + ${a + b}"></span></div>
+	
+	<!-- 문자열 연산자 > Literal Substitions -->
+	<div><span th:text="|${a} + ${b} = ${a + b}|"></span></div>
+	
+	<hr>
+	
+	<div th:text="${a} + ${b}"></div>
+	<div th:text="${a} - ${b}"></div>
+	<div th:text="${a} * ${b}"></div>
+	<div th:text="${a} / ${b}"></div>
+	<div th:text="${a} % ${b}"></div>
+	
+	<hr>
+	
+	<div th:text="${a} > ${b}"></div>
+	<div th:text="${a} >= ${b}"></div>
+	<div th:text="${a} < ${b}"></div>
+	<div th:text="${a} <= ${b}"></div>
+	<div th:text="${a} == ${b}"></div>
+	<div th:text="${a} != ${b}"></div>
+	
+	<hr>
+	
+	<div th:text="true and false"></div>
+	<div th:text="true or false"></div>
+	<div th:text="not true"></div>
+	
+	<hr>
+	
+	<div th:text="${a} > 0 ? '양수' : '양수아님'"></div>
+	<div th:text="${a} > 0 ? '양수'"></div>
+	<div th:text="${a} < 0 ? '양수'"></div> <!-- null -->
+
+	<div th:text="${a} > 0 ?: '양수'"></div> <!-- true  뒤의 값 무시 -->
+	<div th:text="${a} < 0 ?: '양수아님'"></div> <!-- false  뒤의 값 무시 -->
+
+</body>
+</html>
